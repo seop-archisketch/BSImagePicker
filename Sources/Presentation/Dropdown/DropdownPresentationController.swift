@@ -51,7 +51,7 @@ class DropdownPresentationController: UIPresentationController {
     }
     
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: parentSize.width, height: dropDownHeight)
+        return CGSize(width: parentSize.width, height: parentSize.height)
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {

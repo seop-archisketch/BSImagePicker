@@ -48,8 +48,8 @@ class AlbumsViewController: UIViewController {
         tableView.frame = view.bounds
         tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 100
-        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 85
+        tableView.separatorStyle = .singleLine
         tableView.sectionHeaderHeight = .leastNormalMagnitude
         tableView.sectionFooterHeight = .leastNormalMagnitude
         tableView.showsVerticalScrollIndicator = false
@@ -59,14 +59,14 @@ class AlbumsViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         view.addSubview(tableView)
-
-        let lineHeight: CGFloat = 0.5
-        lineView.frame = view.bounds
-        lineView.frame.size.height = lineHeight
-        lineView.frame.origin.y = view.frame.size.height - lineHeight
-        lineView.backgroundColor = .gray
-        lineView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
-        view.addSubview(lineView)
+//
+//        let lineHeight: CGFloat = 0.5
+//        lineView.frame = view.bounds
+//        lineView.frame.size.height = lineHeight
+//        lineView.frame.origin.y = view.frame.size.height - lineHeight
+//        lineView.backgroundColor = .gray
+//        lineView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+//        view.addSubview(lineView)
 
         modalPresentationStyle = .popover
         preferredContentSize = CGSize(width: 320, height: 300)

@@ -40,22 +40,22 @@ class AssetCollectionViewCell: UICollectionViewCell {
             guard oldValue != isSelected else { return }
             
             updateAccessibilityLabel(isSelected)
-            if UIView.areAnimationsEnabled {
-                UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
-                    // Set alpha for views
-                    self.updateAlpha(self.isSelected)
-
-                    // Scale all views down a little
-                    self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-                }, completion: { (finished: Bool) -> Void in
-                    UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
-                        // And then scale them back upp again to give a bounce effect
-                        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                    }, completion: nil)
-                })
-            } else {
-                updateAlpha(isSelected)
-            }
+//            if UIView.areAnimationsEnabled {
+//                UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
+//                    // Set alpha for views
+//                    self.updateAlpha(self.isSelected)
+//
+//                    // Scale all views down a little
+//                    self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+//                }, completion: { (finished: Bool) -> Void in
+//                    UIView.animate(withDuration: TimeInterval(0.1), animations: { () -> Void in
+//                        // And then scale them back upp again to give a bounce effect
+//                        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+//                    }, completion: nil)
+//                })
+//            } else {
+            updateAlpha(isSelected)
+//            }
         }
     }
     
@@ -69,7 +69,7 @@ class AssetCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        selectionOverlayView.backgroundColor = UIColor.lightGray
+        selectionOverlayView.backgroundColor = UIColor.darkGray
         selectionOverlayView.translatesAutoresizingMaskIntoConstraints = false
         selectionView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
@@ -86,10 +86,10 @@ class AssetCollectionViewCell: UICollectionViewCell {
             selectionOverlayView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             selectionOverlayView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             selectionOverlayView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            selectionView.heightAnchor.constraint(equalToConstant: 25),
-            selectionView.widthAnchor.constraint(equalToConstant: 25),
-            selectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            selectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
+            selectionView.heightAnchor.constraint(equalToConstant: 24),
+            selectionView.widthAnchor.constraint(equalToConstant: 24),
+            selectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            selectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8)
         ])
 
         updateAlpha(isSelected)

@@ -78,9 +78,9 @@ class SelectionView: UIView {
         selectedOvalPath.fill()
         context?.restoreGState()
         
-        settings.theme.selectionStrokeColor.setStroke()
-        selectedOvalPath.lineWidth = 1
-        selectedOvalPath.stroke()
+//        settings.theme.selectionStrokeColor.setStroke()
+//        selectedOvalPath.lineWidth = 1
+//        selectedOvalPath.stroke()
         
         //// Selection icon
         let largestSquareInCircleInsetRatio: CGFloat = 0.5 - (0.25 * sqrt(2))

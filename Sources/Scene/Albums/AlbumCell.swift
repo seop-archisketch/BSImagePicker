@@ -59,13 +59,13 @@ final class AlbumCell: UITableViewCell {
         contentView.addSubview(albumTitleLabel)
 
         NSLayoutConstraint.activate([
-            albumImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            albumImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            albumImageView.heightAnchor.constraint(equalToConstant: 84),
-            albumImageView.widthAnchor.constraint(equalToConstant: 84),
-            albumImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            albumTitleLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: 8),
-            albumTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            albumImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            albumImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            albumImageView.heightAnchor.constraint(equalToConstant: 56),
+            albumImageView.widthAnchor.constraint(equalToConstant: 56),
+            albumImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            albumTitleLabel.leadingAnchor.constraint(equalTo: albumImageView.trailingAnchor, constant: 16),
+            albumTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             albumTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             albumTitleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
