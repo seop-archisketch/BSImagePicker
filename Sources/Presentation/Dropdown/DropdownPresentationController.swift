@@ -34,6 +34,7 @@ class DropdownPresentationController: UIPresentationController {
         if #available(iOS 11.0, *) {
             let window = UIApplication.shared.keyWindow
             dropDownOffset = window?.safeAreaInsets.top ?? 0.0
+            dropDownOffset += presentedViewController.navigationController?.navigationBar.frame.height ?? 0.0
         }
         backgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundView.backgroundColor = .clear
