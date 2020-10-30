@@ -26,10 +26,15 @@ import UIKit
 class DropdownPresentationController: UIPresentationController {
     private let dropDownHeight: CGFloat = 200
     private let backgroundView = UIView()
+    private var dropDownOffset: CGFloat = 0
     
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            dropDownOffset = window?.safeAreaInsets.top ?? 0.0
+        }
         backgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundView.backgroundColor = .clear
         backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backgroundTapped(_:))))
@@ -51,7 +56,7 @@ class DropdownPresentationController: UIPresentationController {
     }
     
     override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: parentSize.width, height: parentSize.height)
+        return CGSize(width: parentSize.width, height: parentSize.height - dropDownOffset)
     }
     
     override var frameOfPresentedViewInContainerView: CGRect {
