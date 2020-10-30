@@ -31,6 +31,13 @@ class ViewController: UIViewController {
         imagePicker.settings.selection.max = 5
         imagePicker.settings.theme.selectionStyle = .numbered
         imagePicker.settings.fetch.assets.supportedMediaTypes = [.image, .video]
+        imagePicker.settings.fetch.album.fetchResults = [
+            PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumRecentlyAdded, options: nil),
+            PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil),
+            PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil),
+            PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil),
+        ]
+        imagePicker.modalPresentationStyle = .fullScreen
         imagePicker.settings.selection.unselectOnReachingMax = true
 
         let start = Date()
